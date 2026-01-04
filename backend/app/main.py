@@ -8,7 +8,7 @@ Base.metadata.create_all(bind=engine)
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Dinner Tonight!",
+    title="Dinner Tonight! API",
     description="App for matching recipes to your ingredient inventory",
     version="1.0.0"
 )
@@ -35,7 +35,7 @@ app.include_router(inventory.router, prefix="/api/inventory", tags=["inventory"]
 def read_root():
     """Root endpoint - API info"""
     return {
-        "message": "Dinner Tonight!",
+        "message": "Dinner Tonight! API",
         "version": "1.0.0",
         "docs": "/docs"
     }
