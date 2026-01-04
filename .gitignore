@@ -1,1 +1,5 @@
 node_modules/
+
+# Ignore Python bytecode directories and files
+__pycache__/
+*.pyc
