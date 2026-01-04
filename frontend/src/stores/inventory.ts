@@ -22,6 +22,7 @@ export const useInventoryStore = defineStore('inventory', () => {
     }
 
     async function addIngredient(ingredientId: number, quantity?: number, unit?: string) {
+        error.value = null // Clear previous errors
         try {
             await inventoryApi.add(ingredientId, quantity, unit)
             await fetchInventory() // Refresh the list
@@ -34,6 +35,7 @@ export const useInventoryStore = defineStore('inventory', () => {
     }
 
     async function removeIngredient(ingredientId: number) {
+        error.value = null // Clear previous errors
         try {
             await inventoryApi.remove(ingredientId)
             await fetchInventory() // Refresh the list

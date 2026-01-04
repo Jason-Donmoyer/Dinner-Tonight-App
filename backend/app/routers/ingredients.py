@@ -22,7 +22,7 @@ def search_ingredients(
     search_pattern = f"%{q.lower()}%"
 
     ingredients = db.query(IngredientModel).filter(
-        IngredientModel.name.iLike(search_pattern)
+        IngredientModel.name.ilike(search_pattern)
     ).limit(limit).all()
 
     return [
