@@ -22,7 +22,7 @@ def get_inventory(
     return [
         InventoryItem(
             id=item.id,
-            ingredient=item.ingredient,
+            ingredient=item.ingredient.name,
             ingredient_id=item.ingredient_id,
             quantity=float(item.quantity) if item.quantity else None,
             unit=item.unit

@@ -32,7 +32,7 @@ class RecipeMatchingService:
             WITH recipe_match AS (
                 SELECT
                     r.id,
-                    r.name
+                    r.name,
                     r.description,
                     r.cooking_time,
                     COUNT(ri.ingredient_id) as total_ingredients,
@@ -52,7 +52,7 @@ class RecipeMatchingService:
                 cooking_time,
                 total_ingredients,
                 matched_ingredients,
-                total_ingredients - matched_ingedients as missing_count,
+                total_ingredients - matched_ingredients as missing_count,
                 ROUND(matched_ingredients::numeric / total_ingredients * 100) as match_percent,
                 COALESCE(missing, ARRAY[]::text[]) as missing_ingredients
             FROM recipe_match
